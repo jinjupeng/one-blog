@@ -28,8 +28,10 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     /**/
+    host: 'localhost', // 默认是localhost
     port: port,
-    open: true,
+    open: true, // 自动打开浏览器
+    hot: true, // 热更新
     overlay: {
       warnings: false,
       errors: true
