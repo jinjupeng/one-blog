@@ -78,14 +78,14 @@ export const constantRoutes = [
   },
 
   {
-    path: '/form',
+    path: '/upload',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        name: '上传',
+        component: () => import('@/views/upload/index'),
+        meta: { title: '上传', icon: 'form' }
       }
     ]
   },
