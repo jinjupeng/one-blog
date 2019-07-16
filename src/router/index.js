@@ -92,6 +92,9 @@ export const constantRoutes = [
   {
     path: '/video',
     component: Layout,
+    redirect: '/video/home',
+    name: 'videomanage',
+    meta: { title: '视频管理', icon: 'video' },
     children: [
       {
         path: 'about',
@@ -176,18 +179,6 @@ export const constantRoutes = [
       }
     ]
   },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
