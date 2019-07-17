@@ -62,7 +62,7 @@ service.interceptors.response.use(
           cancelButtonText: 'Cancel',
           type: 'warning'
         }).then(() => {
-          store.dispatch('user/resetToken').then(() => {
+          store.dispatch('user/resvue_admin_template_tokenvue_admin_template_tokenetToken').then(() => {
             location.reload()
           })
         })

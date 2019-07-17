@@ -110,18 +110,50 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/form',
+    path: '/upload',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        name: '上传',
+        component: () => import('@/views/upload/index'),
+        meta: { title: '上传', icon: 'form' }
       }
     ]
   },
-
+  {
+    path: '/video',
+    component: Layout,
+    redirect: '/video/home',
+    name: 'videomanage',
+    meta: { title: '视频管理', icon: 'video' },
+    children: [
+      {
+        path: 'about',
+        name: '关于',
+        component: () => import('@/views/video/About'),
+        meta: { title: '关于', icon: 'form' }
+      },
+      {
+        path: 'home',
+        name: '主页',
+        component: () => import('@/views/video/Home'),
+        meta: { title: '主页', icon: 'form' }
+      },
+      {
+        path: 'postvideo',
+        name: '上传视频',
+        component: () => import('@/views/video/PostVideo'),
+        meta: { title: '上传视频', icon: 'form' }
+      },
+      {
+        path: 'showvideo',
+        name: '视频列表',
+        component: () => import('@/views/video/ShowVideo'),
+        meta: { title: '视频列表', icon: 'form' }
+      }
+    ]
+  },
   {
     path: '/nested',
     component: Layout,
@@ -179,18 +211,6 @@ export const constantRoutes = [
       }
     ]
   },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
