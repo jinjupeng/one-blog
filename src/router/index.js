@@ -30,6 +30,8 @@ import Layout from '@/layout'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+const showVideo = () => import('@/views/video/ShowVideo')
+
 export const constantRoutes = [
   {
     path: '/login',
@@ -101,11 +103,7 @@ export const constantRoutes = [
         component: () => import('@/views/video/PostVideo'),
         meta: { title: '上传视频', icon: 'form' }
       },
-      {
-        path: 'showvideo',
-        name: '视频列表',
-        component: () => import('@/views/video/ShowVideo'),
-        meta: { title: '视频列表', icon: 'form' }
+      { path: 'showvideo', name: 'ShowVideo', component: showVideo, meta: { title: '视频列表', icon: 'form' }
       }
     ]
   },
@@ -118,39 +116,6 @@ export const constantRoutes = [
         name: '上传',
         component: () => import('@/views/upload/index'),
         meta: { title: '上传', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/video',
-    component: Layout,
-    redirect: '/video/home',
-    name: 'videomanage',
-    meta: { title: '视频管理', icon: 'video' },
-    children: [
-      {
-        path: 'about',
-        name: '关于',
-        component: () => import('@/views/video/About'),
-        meta: { title: '关于', icon: 'form' }
-      },
-      {
-        path: 'home',
-        name: '主页',
-        component: () => import('@/views/video/Home'),
-        meta: { title: '主页', icon: 'form' }
-      },
-      {
-        path: 'postvideo',
-        name: '上传视频',
-        component: () => import('@/views/video/PostVideo'),
-        meta: { title: '上传视频', icon: 'form' }
-      },
-      {
-        path: 'showvideo',
-        name: '视频列表',
-        component: () => import('@/views/video/ShowVideo'),
-        meta: { title: '视频列表', icon: 'form' }
       }
     ]
   },

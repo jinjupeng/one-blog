@@ -2,7 +2,7 @@
   <div class="home">
     <div class>
       <el-row :gutter="20">
-        <el-col v-for="video in videos" :key="video.id" :span="4">
+        <el-col v-for="video in videos" :key="video.ID" :span="4">
           <el-card class="video-card" @click.native="goVideo(video)">
             <img class="video-avatar" src="../../assets/avatar.jpg" />
             <div>
@@ -39,7 +39,7 @@ export default {
       })
     },
     goVideo(video) {
-      this.$router.push({ name: 'showVideo', params: { videoID: video.id }})
+      this.$router.push({ name: 'ShowVideo', params: { id: video.ID }})
     }
   }
 }
